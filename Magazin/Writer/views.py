@@ -21,7 +21,7 @@ def create_post(request):
 
 def post_list(request):
     posts = Post.objects.all()
-    return render(request, 'Writer/base.html', {'posts': posts})
+    return render(request, 'Writer/news.html', {'posts': posts})
 
 def news(request):
     return render(request, 'Writer/news.html')
