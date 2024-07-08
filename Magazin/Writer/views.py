@@ -15,14 +15,16 @@ def create_post(request):
     return render(request, 'Writer/create_post.html', {'form': form})
 
 # Create your views here.
-def base(request):
-    return render(request, 'Writer/base.html')
+
 
 
 
 def post_list(request):
     posts = Post.objects.all()
     return render(request, 'Writer/base.html', {'posts': posts})
+
+def news(request):
+    return render(request, 'Writer/news.html')
 
 
 

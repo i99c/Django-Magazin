@@ -23,7 +23,7 @@ function editAuthorDetails() {
 
     authorBody.innerHTML = `
         <div class="edit-container">
-            <input type="text" class="subtitle-input" value="{{writer.user.first_name}}" />
+            <input type="text" class="subtitle-input" value="" />
             <i class="fas fa-save save-icon" onclick="saveAuthorDetails()"></i>
         </div>
         <input type="text" class="title-input" value="${title}" />

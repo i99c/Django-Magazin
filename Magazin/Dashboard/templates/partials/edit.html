@@ -1,4 +1,4 @@
-<form hx-post='{% url "writer_edit" writer.slug %}' hx-target='#contents' hx-swap='innerHTML'>
+{% comment %} <form hx-post='{% url "writer_edit" writer.slug %}' hx-target='#contents' hx-swap='innerHTML'>
     {% csrf_token %}
     <div class="edit-container">
         <input name="firstname" type="text" class="subtitle-input" value="{{ writer.user.first_name }}" />
@@ -10,4 +10,4 @@
         <a href="#"><i class="fab fa-instagram"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
     </div>
-</form>
+</form> {% endcomment %}
