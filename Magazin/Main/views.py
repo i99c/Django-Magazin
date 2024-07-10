@@ -12,13 +12,16 @@ def blog_category(request):
     return render(request, 'Main/blog-category.html')
 
 def fashion(request):
-    return render(request, 'Main/fashion.html')
+    fashion_posts = Post.objects.filter(category__name='Fashion')
+    return render(request, 'Main/fashion.html', {'fashions': fashion_posts})
 
 def lifestyle(request):
-    return render(request, 'Main/lifestyle.html')
+    lifestyle_post = Post.objects.filter(category__name='Lifestyle')
+    return render(request, 'Main/lifestyle.html', {'lifestyles':lifestyle_post})
 
 def travel(request):
-    return render(request, 'Main/travel.html')
+    travel_post = Post.objects.filter(category__name='Travel')
+    return render(request, 'Main/travel.html', {'travels':travel_post})
 
 def post_single(request):
     return render(request, 'Main/post-single.html')

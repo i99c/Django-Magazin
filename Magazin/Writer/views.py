@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import PostForm
+from .models import Post
 
 
 
@@ -19,19 +20,9 @@ def create_post(request):
 
 
 
-def post_list(request, category_name=None):
-    if category_name:
-        category = Category.objects.get(name=category_name)
-        posts = Post.objects.filter(category=category)
-    else:
-        posts = Post.objects.all()
-    return render(request, 'Writer/news.html', {'posts': posts, 'category_name': category_name})
-
-
-def news(request):
-    return render(request, 'Writer/news.html')
-
-
+def post_list(request):
+    posts = Post.objects.all()
+    return render(request, 'Main/blog-category.html', {'posts': posts})
 
 
 
